@@ -1,13 +1,8 @@
 web1: 
-  name: wordpress-web1
+  name: twelve-step-web1
   php_display_errors: "0"
-  document_root: wordpress/
-  shared_writable_dirs: wordpress/wp-content/
-  after_build:
-    - "cp -rv wp-default/. wordpress/"
-    - "cp -rv wordpress/wp-content/ wp-default/"
-  before_deploy:
-    - "cp -rv wp-default/wp-content/. wordpress/wp-content/"
+  document_root: twelve-step/
+  shared_writable_dirs: twelve-step/wp-content/
   php_extensions:
     - mysql
     - gd
@@ -19,5 +14,5 @@ web1:
     - curl
 
 db1:
-  name: wordpress-db1
+  name: twelve-step-db1
   type: mysql
